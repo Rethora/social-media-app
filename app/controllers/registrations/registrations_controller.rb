@@ -16,7 +16,7 @@ class Registrations::RegistrationsController < Devise::RegistrationsController
       sign_in user
       redirect_to '/'
     else
-      p user.errors
+      render json: user.errors, status: :unprocessable_entity
     end
   end
 
