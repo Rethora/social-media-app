@@ -4,12 +4,23 @@ import {
   Route,
   Switch
 } from 'react-router-dom'
-import { Button } from 'semantic-ui-react'
+import Navigation from "./components/Navigation"
+import Home from "./pages/Home"
+
 class App extends Component {
   render() {
     return (
       <>
-        <Button></Button>
+        <Router>
+          <Navigation {...this.props} />
+          <Switch>
+            <Route
+              exact
+              path='/'
+              component={Home}
+            />
+          </Switch>
+        </Router>
       </>
     )
   }
